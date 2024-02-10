@@ -10,7 +10,7 @@ import { CiInstagram } from "react-icons/ci";
 
 const UserCard = ({ user }) => {
   return (
-    <div className="card flex items-center text-white h-[450px] lg:h-[470px]">
+    <div className="card flex items-center text-white h-[450px] mx-auto w-full lg:w-96 lg:mb-6">
       {/* avatar */}
       <div className="card-image">
         <img
@@ -31,7 +31,7 @@ const UserCard = ({ user }) => {
       <p className="mt-1 mb-3 text-sm text-gray-400">{user?.company?.title}</p>
 
       {/* user informations */}
-      <div className="card-subtitle h-[100px] lg:h-[115px]">
+      <div className="card-subtitle h-[100px] lg:h-[90px]">
         <p>
           {" "}
           <span className="font-bold">Email:</span> {user?.email}
