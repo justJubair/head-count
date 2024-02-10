@@ -9,10 +9,12 @@ const Users = () => {
       .then(res=> res.json())
       .then(data=>setUsers(data.users))
     },[])
-    console.log(users)
+ 
     return(
-        <div>
-          <UserCard/>
+        <div className="max-w-screen-xl mx-auto grid gap-10 lg:grid-cols-3 ">
+         {
+          users?.map(user=> <UserCard key={user?.id} user={user}/>)
+         }
         </div>
     )}
 export default Users;

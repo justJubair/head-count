@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+
 // import css
 import "./UserCard.css";
 
@@ -6,22 +8,25 @@ import { CiTwitter } from "react-icons/ci";
 import { CiFacebook } from "react-icons/ci";
 import { CiInstagram } from "react-icons/ci";
 
-const UserCard = () => {
+const UserCard = ({user}) => {
+
   return (
     <div className="card flex items-center">
       <div className="card-image">
         <img
-          src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+          className="w-48 md:w-52 lg:w-60"
+          src={user?.image}
           alt="user image"
         />
       </div>
       <div className="card-title">
-        <p >John Smith</p>
+        <p >{user?.firstName} {user?.lastName}</p>
       </div>
+      <p className="my-2 text-sm text-gray-800">{user?.company?.title}</p>
       <div className="card-subtitle">
-       <p> <span className="font-bold">Email:</span> jubair.ahmed@gmail.com</p>
-       <p> <span className="font-bold">Address:</span> 232/4 Goran Dhaka</p>
-       <p> <span className="font-bold">Company:</span> Meta</p>
+       <p> <span className="font-bold">Email:</span> {user?.email}</p>
+       <p> <span className="font-bold">Address:</span> {user?.address?.address}, {user?.address?.city}</p>
+       <p> <span className="font-bold">Company:</span> {user?.company?.name}</p>
 
       </div>
       <div className="flex my-3 items-center gap-4 text-white">
@@ -35,4 +40,7 @@ const UserCard = () => {
     </div>
   );
 };
+
+
+
 export default UserCard;
