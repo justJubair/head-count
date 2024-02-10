@@ -1,7 +1,9 @@
+import UserCard from "../components/UserCard/UserCard";
+
 const Users = () => {
     return(
         <div>
-             <p> HELLO I Am Users </p>
+          <UserCard/>
         </div>
     )}
 export default Users;

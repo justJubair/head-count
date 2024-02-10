@@ -1,6 +1,7 @@
 // import banner video
 import bannerVideo from "../../assets/videos/banner.mp4";
-import CustomButton from "../../utils/Button/CustomButton";
+import CustomButton from "../../utils/CustomButton";
+
 const Banner = () => {
   return (
     <div className="relative">
