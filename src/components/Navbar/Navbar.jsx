@@ -4,28 +4,28 @@ import logo from "../../assets/images/logo-transparent.png";
 
 const Navbar = () => {
     const navLinks = <>
-    <li className="duration-300 ease-in-out hover:border-b-2 border-yellow-400">
+    <li className="duration-300 ease-in-out hover:border-b-2 border-amber-400">
     <NavLink  to="/"
   className={({ isActive }) =>
-    isActive ? "text-yellow-400" : ""
+    isActive ? "text-amber-400" : ""
   }>
             Home
         </NavLink>
     </li>
        
-    <li className="duration-300 ease-in-out hover:border-b-2 border-yellow-400">
+    <li className="duration-300 ease-in-out hover:border-b-2 border-amber-400">
     <NavLink to="/users"
   className={({ isActive }) =>
-    isActive ? "text-yellow-400" : ""
+    isActive ? "text-amber-400" : ""
   }>
             User Base
         </NavLink>
     </li>
        
-    <li className="duration-300 ease-in-out hover:border-b-2 border-yellow-400">
+    <li className="duration-300 ease-in-out hover:border-b-2 border-amber-400">
     <NavLink to="/about"
   className={({ isActive }) =>
-    isActive ? "text-yellow-400" : ""
+    isActive ? "text-amber-400" : ""
   }>
             About Us
         </NavLink>
