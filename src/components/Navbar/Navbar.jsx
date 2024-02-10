@@ -7,7 +7,7 @@ const Navbar = () => {
     <li className="duration-300 ease-in-out hover:border-b-2 border-amber-400">
     <NavLink  to="/"
   className={({ isActive }) =>
-    isActive ? "text-amber-400" : ""
+    isActive ? "bg-gradient-to-r from-amber-200 to-lime-500 text-transparent bg-clip-text" : ""
   }>
             Home
         </NavLink>
@@ -16,16 +16,16 @@ const Navbar = () => {
     <li className="duration-300 ease-in-out hover:border-b-2 border-amber-400">
     <NavLink to="/users"
   className={({ isActive }) =>
-    isActive ? "text-amber-400" : ""
+    isActive ? "bg-gradient-to-r from-amber-200 to-lime-500 text-transparent bg-clip-text" : ""
   }>
-            User Base
+            Users List
         </NavLink>
     </li>
        
     <li className="duration-300 ease-in-out hover:border-b-2 border-amber-400">
     <NavLink to="/about"
   className={({ isActive }) =>
-    isActive ? "text-amber-400" : ""
+    isActive ? "bg-gradient-to-r from-amber-200 to-lime-500 text-transparent bg-clip-text" : ""
   }>
             About Us
         </NavLink>
