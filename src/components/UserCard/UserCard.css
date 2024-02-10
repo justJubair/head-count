@@ -2,8 +2,8 @@
     --background: hsla(216, 32%, 21%, 1);
     --card-background-color: linear-gradient(
       180.2deg,
-      #c5da54 -8.53%,
-      rgba(71, 249, 246, 0.57) 109.43%
+      #304507 -8.53%,
+      #074445 109.43%
     );
     --btn-color: hsla(0, 0%, 2%, 1);
     --text-primary: hsla(0, 0%, 100%, 1);
@@ -23,18 +23,16 @@
   background: var(--card-background-color);
   border:2px solid var(--border-color);
   border-radius:20px;
-  box-shadow:var( --card-shadow);
 }
 .card .card-title{
-  font-size:1.8rem;
+  font-size:1.3rem;
   font-weight:bold;
   margin-top:0.5rem;
   
 }
 .card .card-subtitle{
-  color:rgb(33, 33, 33);
+  color:#cfcdcd;
   font-size:1rem;
-  margin:10px 0;
 }
 
 
@@ -52,7 +50,7 @@
   cursor:pointer;
   font-weight:600;
   letter-spacing:1px;
-  margin-top:0.2rem;
+
 }
 
 

@@ -11,7 +11,7 @@ const Users = () => {
     },[])
  
     return(
-        <div className="max-w-screen-xl mx-auto grid gap-10 lg:grid-cols-3 ">
+        <div className="max-w-screen-xl mx-auto grid gap-5 lg:gap-7 grid-cols-1  md:grid-cols-2 lg:grid-cols-4 px-5 lg:px-0">
          {
           users?.map(user=> <UserCard key={user?.id} user={user}/>)
          }
