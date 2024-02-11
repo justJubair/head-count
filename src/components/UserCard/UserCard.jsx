@@ -39,8 +39,8 @@ const UserCard = ({ user }) => {
         </p>
         <p className="text-start">
         
-          <span className="font-bold">Address:</span> {user?.address?.address}
-          {user?.address?.city}
+          <span className="font-bold">Address:</span> 
+          {user?.address?.address}, {user?.address?.state}, {user?.address?.city}
         </p>
         <p className="text-start">
      
