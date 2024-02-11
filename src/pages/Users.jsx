@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import UserCard from "../components/UserCard/UserCard";
 
+// icons
+import { IoSearch } from "react-icons/io5";
+
+
 const Users = () => {
   // users state
   const [users, setUsers] = useState([]);
@@ -10,22 +14,35 @@ const Users = () => {
       .then((data) => setUsers(data.users));
   }, []);
 
+  // handle form submit
+  const handleFormSubmit = (e)=>{
+      e.preventDefault()
+      const form = e.target;
+      const searchText = form.searchInput.value;
+      const sortBy = form.sortBy.value;
+      console.log(searchText, sortBy)
+  }
+
   return (
     <>
     <div className="h-16 bg-black"></div>
     <div className="">
     
       {/* heading and search bar */}
-      <div className=" pt-12 pb-12">
+      <div className=" pt-12 pb-12 px-4">
           {/* heading */}
       <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-lime-700 text-center border-lime-400 lg:w-[550px] mx-auto animate-pulse mb-6 ">Welcome to your user database</h1>
-        <form className="flex items-center gap-4 justify-center">
-          <input
+        <form onSubmit={handleFormSubmit} className="flex flex-col items-start gap-4 justify-center md:flex-row md:items-center">
+         <div className="relative w-64 lg:w-80">
+         <input
             type="text"
             placeholder="Search users"
-            className="input input-bordered input-success w-full max-w-xs"
+            name="searchInput"
+            className="input input-bordered input-success w-full"
           />
-          <select defaultValue="name" className="select select-success w-full max-w-xs">
+         <button type="submit"> <IoSearch className="absolute top-3 right-2 text-lime-700 hover:cursor-pointer" size={25}/></button>
+         </div>
+          <select defaultValue="name" className="select select-success max-w-[150px] lg:max-w-[200px]" name="sortBy">
             <option disabled value="default">
               Search by
             </option>
@@ -34,8 +51,8 @@ const Users = () => {
             <option value="company">Sort by company name</option>
             
           </select>
+        <button type="button" className="btn uppercase btn-success text-white">Add new user</button>
         </form>
-        <button className="btn uppercase btn-success text-white">Add new user</button>
       </div>
       <div className="max-w-screen-xl px-5 mx-auto grid  grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-0">
         {users?.map((user) => (
