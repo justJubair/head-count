@@ -114,12 +114,11 @@ const Users = () => {
 
   return (
     <>
-      <div className="h-16 bg-black"></div>
-      <div className="">
+      <div className="bg-black">
         {/* heading and search bar */}
-        <div className=" pt-12 pb-12 px-4">
+        <div className=" pt-24 pb-12 px-4">
           {/* heading */}
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-lime-700 text-center border-lime-400 lg:w-[550px] mx-auto animate-pulse mb-6 ">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-lime-500 text-center border-lime-400 lg:w-[550px] mx-auto animate-pulse mb-6 ">
             Welcome to your user database
           </h1>
 
