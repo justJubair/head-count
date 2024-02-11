@@ -4,6 +4,7 @@ import UserCard from "../components/UserCard/UserCard";
 // icons
 import { IoSearch } from "react-icons/io5";
 import UserAddModal from "../components/UserAddModal/UserAddModal";
+import axios from "axios";
 
 const Users = () => {
   // users state
@@ -55,9 +56,34 @@ const Users = () => {
       
       form.reset();
     }
-
-    
   };
+
+    // handle user creation modal form
+    const handleAddUser = async(e)=>{
+      e.preventDefault()
+      const form = e.target;
+      const firstName = form.firstName.value;
+      const lastName = form.lastName.value;
+      const email = form.email.value;
+      const address = form.address.value;
+      const company = form.company.value;
+      const role = form.role.value;
+      const imageFile = {image:form.image.files[0]};
+    
+
+
+      const dbResponse = await axios.post(import.meta.env.VITE_ImgbbURL, imageFile,{
+        headers: {
+            "content-type": "multipart/form-data",
+        },
+    })
+      
+
+      console.log(dbResponse?.data?.data?.display_url)
+
+      const newUser = {firstName, lastName, email, address:{address}, company:{name: company, title: role}, }
+      
+  }
 
   return (
     <>
@@ -109,7 +135,7 @@ const Users = () => {
             </button>
           </form>
           {/* modal */}
-          <UserAddModal/>
+          <UserAddModal handleAddUser={handleAddUser}/>
         </div>
         <div className="max-w-screen-xl px-5 mx-auto grid  grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-0">
 

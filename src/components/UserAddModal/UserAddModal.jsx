@@ -1,4 +1,8 @@
-const UserAddModal = () => {
+/* eslint-disable react/prop-types */
+const UserAddModal = ({handleAddUser}) => {
+
+
+
   return (
     <div>
    
@@ -13,7 +17,7 @@ const UserAddModal = () => {
 
           {/* Heading */}
           <h1 className="text-center text-xl font-medium">Add New User</h1>
-        <form  className="p-4 space-y-4">
+        <form onSubmit={handleAddUser} className="p-4 space-y-4">
             
         {/* first and last name */}
         <div className="flex items-center gap-3">
