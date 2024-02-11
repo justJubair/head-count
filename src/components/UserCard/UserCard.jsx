@@ -7,6 +7,7 @@ import "./UserCard.css";
 import { CiTwitter } from "react-icons/ci";
 import { CiFacebook } from "react-icons/ci";
 import { CiInstagram } from "react-icons/ci";
+import { Link } from "react-router-dom";
 
 const UserCard = ({ user }) => {
   return (
@@ -55,9 +56,9 @@ const UserCard = ({ user }) => {
       </div>
 
       {/* details button */}
-      <div className="learn-btn">
+      <Link to={`/userDetails/${user?.id}`} className="learn-btn">
         <button type="button">Know more</button>
-      </div>
+      </Link>
     </div>
   );
 };
