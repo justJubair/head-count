@@ -3,6 +3,7 @@ import UserCard from "../components/UserCard/UserCard";
 
 // icons
 import { IoSearch } from "react-icons/io5";
+import UserAddModal from "../components/UserAddModal/UserAddModal";
 
 const Users = () => {
   // users state
@@ -82,7 +83,7 @@ const Users = () => {
               <button type="submit">
                 {" "}
                 <IoSearch
-                  className="absolute top-3 right-2 text-lime-700 hover:cursor-pointer"
+                  className="absolute top-3 right-2 text-lime-600 hover:cursor-pointer"
                   size={25}
                 />
               </button>
@@ -101,11 +102,14 @@ const Users = () => {
             </select>
             <button
               type="button"
-              className="btn uppercase btn-success text-white"
+              onClick={() => document.getElementById("my_modal_3").showModal()}
+              className="btn uppercase text-black bg-gradient-to-r from-amber-300 to-lime-500 border-none"
             >
               Add new user
             </button>
           </form>
+          {/* modal */}
+          <UserAddModal/>
         </div>
         <div className="max-w-screen-xl px-5 mx-auto grid  grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-0">
 
@@ -114,9 +118,7 @@ const Users = () => {
           }
 
 
-          {/* {users?.map((user) => (
-            <UserCard key={user?.id} user={user} />
-          ))} */}
+        
         </div>
       </div>
     </>
