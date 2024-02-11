@@ -1,3 +1,5 @@
+----
+
 # Head Count
 
 A React-based web application for managing users, with features like search, sorting, and user details. The website is designed using React, TailwindCSS, React Router DOM, and DaisyUI.
@@ -29,12 +31,15 @@ A React-based web application for managing users, with features like search, sor
 #### Home page
 ![Home Page](https://raw.githubusercontent.com/justJubair/head-count/main/src/assets/images/HomePage.png)
 
+---
 #### User list page
 ![User List Page](https://raw.githubusercontent.com/justJubair/head-count/main/src/assets/images/UserListPage.png)
 
+---
 #### Add user modal
 ![Add User Modal](https://raw.githubusercontent.com/justJubair/head-count/main/src/assets/images/AddUserModal.png)
 
+---
 #### User details page
 ![User Details Page](https://raw.githubusercontent.com/justJubair/head-count/main/src/assets/images/UserDetailsPage.png)
 
