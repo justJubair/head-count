@@ -17,12 +17,11 @@ const UserDetails = () => {
   }, [id]);
 
   return (
-    <div>
-      <div className="h-16 bg-black"></div>
-      <div className="max-w-screen-xl mx-auto mt-20">
-        <div className="card card-side bg-base-100 shadow-xl">
+    <div className="bg-black min-h-screen">
+      <div className="max-w-screen-xl mx-auto pt-24 lg:pt-40 pb-12 px-6">
+        <div className="flex items-start flex-col md:flex-row max-w-5xl mx-auto bg-gradient-to-t from-black to-green-800 shadow-xl p-4 rounded-lg">
           <figure>
-            <img src={user?.image} alt="user" />
+            <img src={user?.image} alt="user" className="w-52 md:w-full"/>
           </figure>
           <div className="card-body text-white">
             <h2 className="card-title">
@@ -50,9 +49,9 @@ const UserDetails = () => {
      <span className="font-bold">Company:</span> {user?.company?.name}
    </p>
             </div>
-            <div className="card-actions justify-end">
-              <Link to="/" className="btn btn-success text-white">
-                Go Home
+            <div className="card-actions justify-end mt-4 md:mt-0">
+              <Link to="/users" className="btn btn-success text-white">
+                Go back
               </Link>
             </div>
           </div>
