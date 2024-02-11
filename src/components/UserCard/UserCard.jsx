@@ -14,7 +14,7 @@ const UserCard = ({ user }) => {
       {/* avatar */}
       <div className="card-image">
         <img
-          className="w-32"
+          className="w-32 h-32 object-cover"
           src={user?.image}
           alt="user image"
         />
@@ -31,18 +31,18 @@ const UserCard = ({ user }) => {
       <p className="mt-1 mb-3 text-sm text-gray-400">{user?.company?.title}</p>
 
       {/* user informations */}
-      <div className="card-subtitle h-[100px] lg:h-[90px]">
-        <p>
-          {" "}
+      <div className="text-gray-300 h-[100px] lg:h-[90px]">
+        <p className="text-start">
+         
           <span className="font-bold">Email:</span> {user?.email}
         </p>
-        <p>
-          {" "}
-          <span className="font-bold">Address:</span> {user?.address?.address},{" "}
+        <p className="text-start">
+        
+          <span className="font-bold">Address:</span> {user?.address?.address}
           {user?.address?.city}
         </p>
-        <p>
-          {" "}
+        <p className="text-start">
+     
           <span className="font-bold">Company:</span> {user?.company?.name}
         </p>
       </div>

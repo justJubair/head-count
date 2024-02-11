@@ -5,6 +5,7 @@ import UserCard from "../components/UserCard/UserCard";
 import { IoSearch } from "react-icons/io5";
 import UserAddModal from "../components/UserAddModal/UserAddModal";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 const Users = () => {
   // users state
@@ -37,6 +38,7 @@ const Users = () => {
       const searchedByName = users.find(
         (user) => user?.firstName.toLowerCase() === searchText
       );
+      console.log(searchedByName)
       setUserForSearch([searchedByName])
    
       form.reset();
@@ -69,7 +71,7 @@ const Users = () => {
       const company = form.company.value;
       const role = form.role.value;
       const imageFile = {image:form.image.files[0]};
-    
+      const id = Math.floor(Math.random()*200)
 
 
       const dbResponse = await axios.post(import.meta.env.VITE_ImgbbURL, imageFile,{
@@ -78,10 +80,17 @@ const Users = () => {
         },
     })
       
+    const image = dbResponse?.data?.data?.display_url
 
-      console.log(dbResponse?.data?.data?.display_url)
+    if(image){
+      const newUser = {id, firstName, lastName, email, image, address:{address}, company:{name: company, title: role}, }
 
-      const newUser = {firstName, lastName, email, address:{address}, company:{name: company, title: role}, }
+      setUsers([...users, newUser])
+      toast.success(`${firstName} has been added successfully`)
+      form.reset()
+    }
+
+     
       
   }
 

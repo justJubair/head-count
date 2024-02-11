@@ -6,7 +6,7 @@ const UserAddModal = ({handleAddUser}) => {
   return (
     <div>
    
-      <dialog id="my_modal_3" className="modal glass">
+      <dialog id="my_modal_3" className="modal">
         <div className="modal-box">
           <form method="dialog">
             {/* if there is a button in form, it will close the modal */}
